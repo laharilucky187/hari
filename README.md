@@ -12,6 +12,10 @@ Build the project using: mvn clean install
 Run project using: mvn spring-boot:run
 
 Application available at: http://localhost:8083/bank-application/
+UI Application has two links in the top menu
+1. Open Account - To open a new account for customer.
+2. Show Details  - To show details of customer like accounts, transactions etc.
+
 Swagger API documentation at: http://localhost:8083/bank-application/swagger-ui.html
 
 To run UI application & Back-end application separately:
