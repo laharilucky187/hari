@@ -69,7 +69,7 @@
 	<build>
 		<resources>
 			<resource>
-				<directory>client/dist</directory>
+				<directory>client/dist/client</directory>
 				<targetPath>static</targetPath>
 			</resource>
 			<resource>
