@@ -5,7 +5,8 @@ import {ShowDetailsComponent} from "./components/show-details/show-details.compo
 
 const routes: Routes = [
     {path: 'open-account', component: OpenAccountComponent},
-    {path: 'show-details', component: ShowDetailsComponent}
+    {path: 'show-details', component: ShowDetailsComponent},
+    {path: '', component: OpenAccountComponent},
     ];
 
 @NgModule({
