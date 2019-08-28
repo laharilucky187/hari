@@ -1,0 +1,14 @@
+{
+  "/bank-application/api/": {
+    "target": "http://localhost:8083/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+    "/bank-application/": {
+        "target": "http://localhost:8083/",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

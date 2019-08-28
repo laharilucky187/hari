@@ -1,0 +1,58 @@
+&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="container">
+	<div class="register-item">
+		<app-alert></app-alert>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label class="input-group-text" for="inputGroupSelect01">CustomerId</label>
+				</div>
+				<select class="custom-select" name="customerList" id="customerList" id="inputGroupSelect01" [(ngModel)]="customer">
+					<option [value]="undefined" selected>Choose...</option>
+					<option name="customer" *ngFor="let customer of customerList" [ngValue]="customer">{{customer.customerId}}
+						- {{customer.firstName}} {{customer.lastName}}</option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-primary" (click)="onSubmit()">Show Details</button>
+			
+			<br>
+			<br>
+			<div>
+			<table *ngIf="accountList" class="table table-striped">
+			  <thead>
+			 	<div *ngIf="accountList.length == 0">
+			 	<i>No accounts found for the customer</i>
+			 	</div>
+			 	<div *ngIf="accountList.length > 0" class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label class="input-group-text" for="inputGroupSelect01">AccountId</label>
+				</div>
+				<select class="custom-select" name="accountList" id="accountList" id="accountList" [(ngModel)]="account" (change)="getTransactions($event)">
+					<option [value]="undefined" selected>Select an account to show transactions...</option>
+					<option name="account" *ngFor="let account of accountList" [ngValue]="account">{{account.accountId}}</option>
+				</select>
+				</div>
+				<div *ngIf="transactionsList && transactionsList.length == 0">
+				<i>No Transactions found for the customer</i>
+				</div>
+				
+			  <tr *ngIf="transactionsList && transactionsList.length > 0">
+			    <th scope="col">Trans #</th>
+			    <th scope="col">Credit</th>
+			    <th scope="col">Debit</th>
+			    <th scope="col">Balance</th>
+			  </tr>
+			  </thead>
+			  <tbody>
+			  <tr *ngFor="let transaction of transactionsList">
+				  <td>{{transaction.transactionId}}</td>
+				  <td>{{transaction.amount}}</td>
+				  <td></td>
+				  <td>{{transaction.balance}}</td>
+			  </tr>
+			  </tbody>
+			</table>
+			</div>
+	</div>
+</div>
+
+

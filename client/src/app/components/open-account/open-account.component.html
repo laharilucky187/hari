@@ -1,0 +1,32 @@
+&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="container">
+	<div class="logo">Open a new account!</div>
+	<div class="register-item">
+		<app-alert></app-alert>
+		<form (ngSubmit)="onSubmit()" #f="ngForm">
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label class="input-group-text" for="inputGroupSelect01">CustomerId</label>
+				</div>
+				<select class="custom-select" name="customerList" id="customerList" id="inputGroupSelect01" [(ngModel)]="customer">
+					<option [value]="undefined" selected>Choose...</option>
+					<option name="customer" *ngFor="let customer of customerList" [ngValue]="customer">{{customer.customerId}}
+						- {{customer.firstName}} {{customer.lastName}}</option>
+				</select>
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">$</span>
+				</div>
+				<input type="text" class="form-control" name="initialAmount"  [(ngModel)]="initialAmount"
+					aria-label="Amount (to the nearest dollar)">
+				<div class="input-group-append">
+					<span class="input-group-text">.00</span>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary" [disabled]="!f.form.valid">Submit</button>
+		</form>
+	</div>
+</div>
+
+
