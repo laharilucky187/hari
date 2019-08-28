@@ -10,3 +10,8 @@ Prerequisit to run the project:
 Build the project using: mvn clean install
 
 Run project using: mvn spring-boot:run
+
+To run UI application & Back-end application separately:
+1. Run spring-boot application by running main class.
+2. Run command prompt and go to folder /client.
+3. Run command "npm start" to start Angular UI application.
